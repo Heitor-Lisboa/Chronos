@@ -89,4 +89,4 @@ O exemplo apresentado representa apenas a estrutura geral do sistema.
   Estudante de Informática – IFRN  
 
 - **Fábio Franco**  
-  Orientador de projeto – IFRN
+  Professor Orientador de projeto – IFRN
