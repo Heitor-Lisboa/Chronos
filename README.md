@@ -2,7 +2,7 @@
 
 Sistema de monitoramento e automação para data center baseado em dispositivos embarcados (ESP32/ESP8266) integrados ao Home Assistant.
 
-O projeto realiza a coleta contínua de dados ambientais (temperatura, umidade, luminosidade e presença de gás) e utiliza essas informações para automatizar o controle de ar-condicionado, mantendo condições ideais de operação no ambiente.
+O sistema realiza a coleta contínua de dados ambientais (temperatura, umidade, luminosidade e presença de gás) e automatiza o controle de ar-condicionado para manter condições ideais de operação.
 
 Projeto desenvolvido no IFRN – Campus São Gonçalo do Amarante.
 
@@ -10,22 +10,25 @@ Projeto desenvolvido no IFRN – Campus São Gonçalo do Amarante.
 
 ## Objetivo
 
-Monitorar variáveis críticas do data center em tempo real e automatizar respostas a condições adversas, como aumento de temperatura ou detecção de gás.
+Monitorar variáveis críticas do ambiente e automatizar respostas a condições adversas, como aumento de temperatura ou detecção de gás.
 
 ---
 
 ## Arquitetura do Sistema
 
-O sistema é composto por sensores conectados a microcontroladores ESP32, responsáveis por coletar e transmitir os dados para o Home Assistant, onde são processados e utilizados em automações.
+Fluxo de funcionamento:
 
 Sensores → ESP32/ESP8266 → Rede Wi-Fi → Home Assistant → Controle de Ar-Condicionado
+
+
+Os sensores coletam dados ambientais, que são enviados pelos microcontroladores para o Home Assistant via rede, onde são processados e utilizados em automações.
 
 ---
 
 ## Sensores Utilizados
 
-- **Temperatura e Umidade:** AHT10 / AHT20 (via I2C)  
-- **Luminosidade:** sensor digital (GPIO)  
+- **Temperatura e Umidade:** AHT10 / AHT20 (I2C)  
+- **Luminosidade:** sensor digital via GPIO  
 - **Gás/Fumaça:** sensor MQ-2 (saída digital)  
 
 ---
@@ -33,14 +36,14 @@ Sensores → ESP32/ESP8266 → Rede Wi-Fi → Home Assistant → Controle de Ar-
 ## Funcionamento
 
 - Coleta contínua de dados ambientais  
-- Envio dos dados via rede para o Home Assistant  
+- Transmissão dos dados via Wi-Fi  
 - Monitoramento em tempo real  
-- Execução de regras de automação (ex: controle de temperatura)  
-- Detecção de eventos críticos (ex: presença de gás)  
+- Execução de automações  
+- Detecção de condições críticas  
 
 ---
 
-## Exemplo de Configuração (ESPHome)
+## Configuração (ESPHome)
 
 ```yaml
 i2c:
@@ -68,6 +71,7 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: true
     name: "Luz Ambiente"
+    device_class: light
 
   - platform: gpio
     pin:
@@ -75,3 +79,4 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: true
     name: "Alarme de Gás"
+    device_class: gas
