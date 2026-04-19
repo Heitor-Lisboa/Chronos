@@ -1,0 +1,8 @@
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "Luz Ambiente"
+    device_class: light
