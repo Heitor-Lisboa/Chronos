@@ -42,6 +42,8 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 
 ## Configuração (ESPHome)
 
+
+
 ## Configurações
 
 As configurações dos sensores estão disponíveis na pasta `/configs`.
