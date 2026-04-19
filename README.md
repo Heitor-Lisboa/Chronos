@@ -49,7 +49,7 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 As configurações dos sensores estão disponíveis na pasta `/configs`.
 
 # Configuração geral (exemplo demonstrativo)
-
+```yaml
 i2c:
   sda: 21
   scl: 22
@@ -73,5 +73,5 @@ binary_sensor:
     pin: GPIO27
     name: "Alarme de Gás"
 
-# Wi-Fi e integração omitidos por confidencialidade institucional
-# (credenciais, IPs e configurações específicas não incluídas)
+## Wi-Fi e integração omitidos por confidencialidade institucional
+## (credenciais, IPs e configurações específicas não incluídas)
