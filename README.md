@@ -6,22 +6,25 @@ O sistema realiza a coleta contínua de dados ambientais (temperatura, umidade, 
 
 Projeto desenvolvido no IFRN – Campus São Gonçalo do Amarante.
 
+---
 
 ## Objetivo
 
 Monitorar variáveis críticas do ambiente e automatizar respostas a condições adversas, como aumento de temperatura ou detecção de gás.
 
-
+---
 
 ## Arquitetura do Sistema
 
 Fluxo de funcionamento:
 
+```
 Sensores → ESP32/ESP8266 → Rede Wi-Fi → Home Assistant → Controle de Ar-Condicionado
-
+```
 
 Os sensores coletam dados ambientais, que são enviados pelos microcontroladores para o Home Assistant via rede, onde são processados e utilizados em automações.
 
+---
 
 ## Sensores Utilizados
 
@@ -29,6 +32,7 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 - **Luminosidade:** sensor digital via GPIO  
 - **Gás/Fumaça:** sensor MQ-2 (saída digital)  
 
+---
 
 ## Funcionamento
 
@@ -40,12 +44,15 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 
 ---
 
-## Configurações
+## Configuração
 
-As configurações dos sensores estão disponíveis na pasta `/configs`.
+As configurações específicas de cada sensor estão organizadas na pasta `/configs`.
 
-# Configuração geral (exemplo demonstrativo)
+Abaixo está um exemplo simplificado de configuração completa:
+
 ```yaml
+# Configuração geral (exemplo demonstrativo)
+
 i2c:
   sda: 21
   scl: 22
@@ -69,5 +76,20 @@ binary_sensor:
     pin: GPIO27
     name: "Alarme de Gás"
 
-## Wi-Fi e integração omitidos por confidencialidade institucional
-## (credenciais, IPs e configurações específicas não incluídas)
+# Wi-Fi e integração com Home Assistant omitidos por confidencialidade institucional
+```
+
+---
+
+## Confidencialidade
+
+Parte da configuração original foi omitida por conter credenciais e informações institucionais.
+
+O exemplo apresentado representa apenas a estrutura geral do sistema.
+
+---
+
+## Autor
+
+Heitor Lisboa dos Santos  
+Estudante de Informática – IFRN
