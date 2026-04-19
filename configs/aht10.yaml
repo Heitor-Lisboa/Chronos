@@ -1,0 +1,17 @@
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  id: bus_a
+  frequency: 100kHz
+
+sensor:
+  - platform: aht10
+    variant: AHT20
+    i2c_id: bus_a
+    address: 0x38
+    temperature:
+      name: "Temperatura"
+    humidity:
+      name: "Umidade"
+    update_interval: 20s
