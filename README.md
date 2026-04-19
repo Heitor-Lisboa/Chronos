@@ -82,9 +82,11 @@ Parte da configuração original foi omitida por conter credenciais e informaç�
 
 O exemplo apresentado representa apenas a estrutura geral do sistema.
 
----
 
-## Autor
+## Autores
 
-Heitor Lisboa dos Santos  
+Heitor Lisboa dos Santos 
 Estudante de Informática – IFRN
+
+Fábio Franco
+Discente orientador de projeto - IFRN
