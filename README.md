@@ -6,13 +6,12 @@ O sistema realiza a coleta contínua de dados ambientais (temperatura, umidade, 
 
 Projeto desenvolvido no IFRN – Campus São Gonçalo do Amarante.
 
----
 
 ## Objetivo
 
 Monitorar variáveis críticas do ambiente e automatizar respostas a condições adversas, como aumento de temperatura ou detecção de gás.
 
----
+
 
 ## Arquitetura do Sistema
 
@@ -23,7 +22,6 @@ Sensores → ESP32/ESP8266 → Rede Wi-Fi → Home Assistant → Controle de Ar-
 
 Os sensores coletam dados ambientais, que são enviados pelos microcontroladores para o Home Assistant via rede, onde são processados e utilizados em automações.
 
----
 
 ## Sensores Utilizados
 
@@ -31,7 +29,6 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 - **Luminosidade:** sensor digital via GPIO  
 - **Gás/Fumaça:** sensor MQ-2 (saída digital)  
 
----
 
 ## Funcionamento
 
@@ -45,38 +42,6 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 
 ## Configuração (ESPHome)
 
-```yaml
-i2c:
-  sda: 21
-  scl: 22
-  scan: true
-  id: bus_a
-  frequency: 100kHz
+## 🔧 Configurações
 
-sensor:
-  - platform: aht10
-    variant: AHT20
-    i2c_id: bus_a
-    address: 0x38
-    temperature:
-      name: "Temperatura"
-    humidity:
-      name: "Umidade"
-    update_interval: 20s
-
-binary_sensor:
-  - platform: gpio
-    pin:
-      number: GPIO14
-      mode: INPUT_PULLUP
-      inverted: true
-    name: "Luz Ambiente"
-    device_class: light
-
-  - platform: gpio
-    pin:
-      number: GPIO27
-      mode: INPUT_PULLUP
-      inverted: true
-    name: "Alarme de Gás"
-    device_class: gas
+As configurações dos sensores estão disponíveis na pasta `/configs`.
