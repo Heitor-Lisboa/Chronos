@@ -42,6 +42,34 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 
 ## Configuração (ESPHome)
 
-## 🔧 Configurações
+## Configurações
 
 As configurações dos sensores estão disponíveis na pasta `/configs`.
+
+# Configuração geral (exemplo demonstrativo)
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  id: bus_a
+
+sensor:
+  - platform: aht10
+    variant: AHT20
+    temperature:
+      name: "Temperatura"
+    humidity:
+      name: "Umidade"
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO14
+    name: "Luz Ambiente"
+
+  - platform: gpio
+    pin: GPIO27
+    name: "Alarme de Gás"
+
+# Wi-Fi e integração omitidos por confidencialidade institucional
+# (credenciais, IPs e configurações específicas não incluídas)
