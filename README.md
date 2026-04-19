@@ -85,8 +85,8 @@ O exemplo apresentado representa apenas a estrutura geral do sistema.
 
 ## Autores
 
-Heitor Lisboa dos Santos 
-Estudante de Informática – IFRN
+- **Heitor Lisboa dos Santos**  
+  Estudante de Informática – IFRN  
 
-Fábio Franco
-Discente orientador de projeto - IFRN
+- **Fábio Franco**  
+  Orientador de projeto – IFRN
