@@ -26,7 +26,7 @@ Os sensores coletam dados ambientais, que são enviados pelos microcontroladores
 ## Sensores Utilizados
 
 - **Temperatura e Umidade:** AHT10 / AHT20 (I2C)  
-- **Luminosidade:** sensor digital via GPIO  
+- **Luminosidade:** Sensor de Luminosidade LDR HW-072   
 - **Gás/Fumaça:** sensor MQ-2 (saída digital)  
 
 ## Funcionamento
